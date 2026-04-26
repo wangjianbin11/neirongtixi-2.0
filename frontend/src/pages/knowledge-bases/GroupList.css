@@ -1,0 +1,23 @@
+.group-list {
+  padding: 24px;
+  background: #f5f5f7;
+  min-height: 100vh;
+}
+
+.group-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.group-list-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.filter-card {
+  margin-bottom: 16px;
+}

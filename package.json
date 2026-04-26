@@ -1,0 +1,27 @@
+{
+  "name": "asg-content-system",
+  "version": "2.0.0",
+  "description": "ASG内容系统 - 基于AI驱动的内容管理和发布平台",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "db:migrate": "psql -h localhost -U postgres -d asg_content -f database/migrations/001_init.sql",
+    "db:reset": "psql -h localhost -U postgres -c \"DROP DATABASE IF EXISTS asg_content;\" && psql -h localhost -U postgres -c \"CREATE DATABASE asg_content;\" && npm run db:migrate",
+    "docker:up": "docker-compose -f docker-compose.dev.yml up -d",
+    "docker:down": "docker-compose -f docker-compose.dev.yml down",
+    "docker:logs": "docker-compose -f docker-compose.dev.yml logs -f"
+  },
+  "keywords": [
+    "content-management",
+    "ai",
+    "seo",
+    "publishing"
+  ],
+  "author": "ASG",
+  "license": "MIT"
+}

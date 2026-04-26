@@ -1,0 +1,133 @@
+/* 知识库列表样式 */
+.baseList {
+  padding: 24px;
+}
+
+.baseListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.baseListTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.baseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.baseCard {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.baseCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #1890ff;
+}
+
+.baseCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.baseCardTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.baseCardDescription {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #8c8c8c;
+  line-height: 1.5;
+  min-height: 40px;
+}
+
+.baseCardMeta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #8c8c8c;
+}
+
+.baseCardMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.baseCardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.baseCardType {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  background: #f0f0f0;
+  color: #595959;
+}
+
+.baseCardType.manual {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.baseCardType.ai_generated {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.baseCardType.imported {
+  background: #fff7e6;
+  color: #fa8c16;
+}
+
+.baseCardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.baseCardTag {
+  padding: 2px 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #595959;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  color: #d9d9d9;
+  margin-bottom: 16px;
+}
+
+.emptyStateText {
+  color: #8c8c8c;
+  font-size: 14px;
+}

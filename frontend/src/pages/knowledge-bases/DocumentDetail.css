@@ -1,0 +1,42 @@
+.document-detail {
+  padding: 24px;
+  background: #f5f5f7;
+  min-height: 100vh;
+}
+
+.document-detail-header {
+  margin-bottom: 24px;
+}
+
+.document-title-section {
+  margin-bottom: 24px;
+}
+
+.document-content-section {
+  margin-top: 32px;
+}
+
+.document-content-wrapper {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.document-content {
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.document-content p {
+  margin-bottom: 12px;
+}
+
+.document-file-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}

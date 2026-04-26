@@ -1,0 +1,14 @@
+.execution-history {
+  padding: 24px;
+}
+
+.execution-history-header h2 {
+  margin: 0 0 16px 0;
+}
+
+.filter-bar {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}

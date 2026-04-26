@@ -1,0 +1,28 @@
+-- 草稿存储表
+CREATE TABLE IF NOT EXISTS drafts (
+  id VARCHAR(36) PRIMARY KEY,
+  execution_id VARCHAR(36) COMMENT '关联的工作流执行ID',
+  workflow_id VARCHAR(36) COMMENT '关联的工作流ID',
+  title VARCHAR(500) NOT NULL COMMENT '草稿标题',
+  content_type ENUM('blog', 'social_xiaohongshu', 'social_wechat', 'social_douyin', 'social_weibo', 'social_linkedin', 'video_script', 'report') NOT NULL COMMENT '内容类型',
+  content_json JSON NOT NULL COMMENT '内容数据JSON',
+  platform VARCHAR(50) COMMENT '目标平台',
+  keyword_id VARCHAR(36) COMMENT '关联关键词ID',
+  topic_id VARCHAR(36) COMMENT '关联话题ID',
+  status ENUM('draft', 'pending_review', 'approved', 'rejected', 'published') DEFAULT 'draft' COMMENT '草稿状态',
+  metadata JSON COMMENT '元数据(SEO信息、标签等)',
+  reviewed_by VARCHAR(36) COMMENT '审核人ID',
+  reviewed_at TIMESTAMP NULL COMMENT '审核时间',
+  review_comment TEXT COMMENT '审核意见',
+  published_at TIMESTAMP NULL COMMENT '发布时间',
+  created_by VARCHAR(36) COMMENT '创建者ID',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_execution_id (execution_id),
+  INDEX idx_workflow_id (workflow_id),
+  INDEX idx_status (status),
+  INDEX idx_content_type (content_type),
+  INDEX idx_keyword_id (keyword_id),
+  INDEX idx_created_by (created_by),
+  INDEX idx_created_at (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='内容草稿表';

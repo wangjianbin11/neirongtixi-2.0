@@ -1,0 +1,288 @@
+/* ==================== 工作流列表 - 响应式布局 ==================== */
+.workflow-list {
+  padding: 24px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 头部 */
+.workflow-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.workflow-list-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* 筛选卡片 */
+.filter-card {
+  margin-bottom: 16px;
+}
+
+.filter-card .ant-space {
+  width: 100%;
+}
+
+.filter-card .ant-space-item {
+  flex-shrink: 0;
+}
+
+/* 表格容器 */
+.workflow-table {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.workflow-table .ant-table {
+  overflow-x: auto;
+}
+
+.workflow-table .ant-table-container {
+  min-width: 100%;
+}
+
+/* 工作流名称 */
+.workflow-name {
+  font-weight: 500;
+}
+
+/* 桌面端操作按钮 */
+.desktop-actions {
+  display: flex;
+}
+
+.mobile-actions {
+  display: none;
+}
+
+/* 响应式断点 */
+
+/* 小屏幕手机 (< 576px) */
+@media (max-width: 575px) {
+  .workflow-list {
+    padding: 16px;
+  }
+
+  .workflow-list-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .workflow-list-header h2 {
+    font-size: 18px;
+  }
+
+  .workflow-list-header > .ant-space {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .workflow-list-header .ant-btn {
+    flex: 1;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .filter-card .ant-space {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .filter-card .ant-space-item {
+    width: 100%;
+  }
+
+  .filter-card .ant-input-search,
+  .filter-card .ant-select {
+    width: 100% !important;
+  }
+
+  /* 隐藏桌面端操作，显示移动端操作 */
+  .desktop-actions {
+    display: none !important;
+  }
+
+  .mobile-actions {
+    display: flex !important;
+  }
+
+  /* 表格适配 */
+  .workflow-table .ant-table {
+    font-size: 13px;
+  }
+
+  .workflow-table .ant-table-thead > tr > th {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .workflow-table .ant-table-tbody > tr > td {
+    padding: 8px;
+  }
+
+  .workflow-table .ant-btn {
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  /* 简化分页 */
+  .workflow-table .ant-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .workflow-table .ant-pagination-options {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .workflow-table .ant-pagination-item {
+    min-width: 28px;
+    height: 28px;
+    line-height: 26px;
+  }
+}
+
+/* 平板 (576px - 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .workflow-list {
+    padding: 20px;
+  }
+
+  .filter-card .ant-space {
+    flex-wrap: wrap;
+  }
+
+  .filter-card .ant-space-item {
+    flex-shrink: 0;
+  }
+
+  /* 中等屏幕显示部分列 */
+  .workflow-table .ant-table-thead > tr > th,
+  .workflow-table .ant-table-tbody > tr > td {
+    padding: 10px;
+  }
+}
+
+/* 平板横屏 (768px - 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .workflow-list-header .ant-btn {
+    font-size: 14px;
+  }
+
+  .workflow-table .ant-table-thead > tr > th,
+  .workflow-table .ant-table-tbody > tr > td {
+    padding: 12px;
+  }
+}
+
+/* 大屏优化 (> 992px) */
+@media (min-width: 992px) {
+  .workflow-list {
+    padding: 24px;
+  }
+
+  .workflow-table {
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+
+  .workflow-table .ant-table-thead > tr > th {
+    background: #fafafa;
+    font-weight: 600;
+  }
+
+  /* 悬停效果 */
+  .workflow-table .ant-table-tbody > tr:hover > td {
+    background: #f5f5f7;
+  }
+}
+
+/* 超大屏 (> 1400px) */
+@media (min-width: 1400px) {
+  .workflow-list {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* 移动端按钮优化 */
+@media (max-width: 575px) {
+  .mobile-actions .ant-btn {
+    min-width: 44px;
+    height: 36px;
+  }
+}
+
+/* 触摸优化 */
+@media (hover: none) and (pointer: coarse) {
+  .workflow-table .ant-table-tbody > tr > td {
+    padding: 12px 8px;
+  }
+
+  .workflow-table .ant-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .workflow-list {
+    padding: 0;
+  }
+
+  .workflow-list-header,
+  .filter-card,
+  .workflow-table .ant-table-pagination {
+    display: none;
+  }
+
+  .workflow-table {
+    box-shadow: none;
+  }
+}
+
+/* 深色模式支持（可选） */
+@media (prefers-color-scheme: dark) {
+  .workflow-table .ant-table-tbody > tr:hover > td {
+    background: #1f1f1f;
+  }
+
+  .workflow-table .ant-table-thead > tr > th {
+    background: #141414;
+  }
+}
+
+/* 工作流卡片样式（备用） */
+.workflow-card {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.workflow-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.workflow-card-actions {
+  margin-top: 12px;
+}
+
+.template-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
